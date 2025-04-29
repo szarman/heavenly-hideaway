@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends & Family | Heavenly Hideaway</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkPassword() {
+            const input = document.getElementById('password').value;
+            const correctPassword = "hhtoddnc";
+            const content = document.getElementById('protected-content');
+            const error = document.getElementById('error-message');
+            if (input === correctPassword) {
+                content.style.display = 'block';
+                document.getElementById('login-form').style.display = 'none';
+                error.textContent = '';
+            } else {
+                error.textContent = 'Incorrect password. Please try again.';
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Friends & Family Rate</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="the_cabin.html">The Cabin</a>
+    <a href="availability.html">Availability</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="things_to_do.html">Things to Do</a>
+    <a href="house_rules.html">House Rules</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
+<section>
+    <div id="login-form">
+        <p>Enter password to access this page:</p>
+        <input type="password" id="password" />
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+    <div id="protected-content" style="display:none;">
+        <h2>Special Friends & Family Rate</h2>
+        <p>Our friends and family rate is <strong>$500 per week</strong>, which includes the $350 for professional cleaning and trash removal services.</p>
+        <h3>How to Book</h3>
+        <ol>
+            <li>Email <a href="mailto:szarman21@gmail.com">szarman21@gmail.com</a> with the dates you’re requesting.</li>
+            <li>Wait for a confirmation email from me with availability.</li>
+            <li>Once confirmed, you may send payment by one of the following methods:
+                <ul>
+                    <li>Zelle to szarman21@gmail.com</li>
+                    <li>PayPal to szarman21@gmail.com</li>
+                    <li>Check mailed to: 18026 Spencer Rd</li>
+                </ul>
+            </li>
+        </ol>
+        <p>Thank you for supporting our mountain retreat!</p>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2025 Heavenly Hideaway</p>
+</footer>
+</body>
+</html>

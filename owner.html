@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Owner Portal | Heavenly Hideaway</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkPassword() {
+            const input = document.getElementById('password').value;
+            const correctPassword = "zarcotoddnc";
+            const content = document.getElementById('protected-content');
+            const error = document.getElementById('error-message');
+            if (input === correctPassword) {
+                content.style.display = 'block';
+                document.getElementById('login-form').style.display = 'none';
+                error.textContent = '';
+            } else {
+                error.textContent = 'Incorrect password. Please try again.';
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Owner Dashboard</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="the_cabin.html">The Cabin</a>
+    <a href="availability.html">Availability</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="things_to_do.html">Things to Do</a>
+    <a href="house_rules.html">House Rules</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
+<section>
+    <div id="login-form">
+        <p>Enter owner password to access dashboard:</p>
+        <input type="password" id="password" />
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+    <div id="protected-content" style="display:none;">
+        <h2>Power Usage Monitoring (Coming Soon)</h2>
+        <p>This section will display live or historical power usage graphs pulled from the Wi-Fi power monitor connected to the breaker system.</p>
+        <p>Stay tuned for Python-based updates and visualizations right here!</p>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2025 Heavenly Hideaway</p>
+</footer>
+</body>
+</html>
