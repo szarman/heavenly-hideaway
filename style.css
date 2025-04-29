@@ -11,6 +11,8 @@ body {
 
 /* Header */
 header {
+    background: url('images/header.png') center center / cover no-repeat;
+
     background-color: #2e3b2f;
     color: #fff;
     padding: 40px 20px;
