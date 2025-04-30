@@ -1,21 +1,44 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Gallery | Heavenly Hideaway</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<title>Gallery | Heavenly Hideaway</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 <header>
-    <h1>Gallery</h1>
+<h1>Gallery</h1>
 </header>
-<nav><a href="index.html">Home</a><a href="the_cabin.html">The Cabin</a><a href="availability.html">Availability</a><a href="reviews.html">Reviews</a><a href="things_to_do.html">Things to Do</a><a href="house_rules.html">House Rules</a><strong>Gallery</strong><a href="contact.html">Contact</a></nav>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="the_cabin.html">The Cabin</a>
+<a href="availability.html">Availability</a>
+<a href="reviews.html">Reviews</a>
+<div class="dropdown">
+<span class="dropbtn">Things to Do</span>
+<div class="dropdown-content">
+<a href="water.html">Water Adventures</a>
+<a href="golf.html">Golf Courses</a>
+<a href="biking.html">Biking Routes</a>
+<a href="hiking.html">Hiking Trails</a>
+<a href="restaurants.html">Restaurants</a>
+<a href="festivals.html">Festivals &amp; Events</a>
+</div>
+</div>
+<a href="house_rules.html">House Rules</a>
+<a href="gallery.html">Gallery</a>
+<a href="friends.html">Friends</a>
+<a href="owner.html">Owner</a>
+<a href="contact.html">Contact</a>
+</nav>
+
 <section>
-    
-        <h2>Photo Gallery</h2>
-        <div class="gallery-grid" id="gallery"></div>
-        <script>
+<h2>Photo Gallery</h2>
+<div class="gallery-grid" id="gallery"></div>
+<script>
         const images = [
             "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg",
             "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg",
@@ -29,10 +52,9 @@
             galleryDiv.appendChild(img);
         });
         </script>
-    
 </section>
 <footer>
-    <p>&copy; 2025 Heavenly Hideaway</p>
+<p>© 2025 Heavenly Hideaway</p>
 </footer>
 </body>
 </html>
