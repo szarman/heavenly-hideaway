@@ -72,3 +72,11 @@ nav .dropdown-content a:hover {
     background-color: #2e3b2f;
     color: #aad576;
 }
+
+nav .dropbtn {
+    color: white;
+    font-weight: bold;
+    padding: 0 15px;
+    display: inline-block;
+    text-decoration: none;
+}
