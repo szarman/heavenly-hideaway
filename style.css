@@ -45,6 +45,7 @@ nav .dropdown-content {
 }
 nav .dropdown-content a {
     color: white;
+    font-weight: bold;
     display: block;
     padding: 10px;
     text-align: left;
@@ -65,4 +66,9 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+nav .dropdown-content a:hover {
+    background-color: #2e3b2f;
+    color: #aad576;
 }
