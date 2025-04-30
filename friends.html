@@ -5,21 +5,28 @@
     <meta charset="UTF-8">
     <title>Friends & Family | Heavenly Hideaway</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function checkPassword() {
-            const input = document.getElementById('password').value;
-            const correctPassword = "hhtoddnc";
-            const content = document.getElementById('protected-content');
-            const error = document.getElementById('error-message');
-            if (input === correctPassword) {
-                content.style.display = 'block';
-                document.getElementById('login-form').style.display = 'none';
-                error.textContent = '';
-            } else {
-                error.textContent = 'Incorrect password. Please try again.';
-            }
+    
+<script>
+    function checkPassword() {
+        const input = document.getElementById('password').value;
+        const familyContent = document.getElementById('family-rate');
+        const friendContent = document.getElementById('friend-rate');
+        const error = document.getElementById('error-message');
+        document.getElementById('login-form').style.display = 'none';
+
+        if (input === "hhfamilync") {
+            familyContent.style.display = 'block';
+            error.textContent = '';
+        } else if (input === "hhfriendnc") {
+            friendContent.style.display = 'block';
+            error.textContent = '';
+        } else {
+            document.getElementById('login-form').style.display = 'block';
+            error.textContent = 'Incorrect password. Please try again.';
         }
-    </script>
+    }
+</script>
+
 </head>
 <body>
 <header>
@@ -56,7 +63,7 @@
     </div>
     <div id="protected-content" style="display:none;">
         <h2>Special Friends & Family Rate</h2>
-        <p>Our friends and family rate is <strong>$450 per week</strong>, which includes the $350 for professional cleaning and trash removal services.</p>
+        <p>Our friends and family rate is <strong>$450 per week</strong>. This covers the $350 professional cleaning and trash removal fee, plus a rental agency fee representing what they would normally earn on a full-price week.</p>
         <h3>How to Book</h3>
         <ol>
             <li>Email <a href="mailto:szarman21@gmail.com">szarman21@gmail.com</a> with the dates you’re requesting.</li>
@@ -72,7 +79,16 @@
         <p><strong>Phone:</strong> <a href="tel:+17275152382">(727) 515-2382</a></p>
         <p>Thank you for supporting our mountain retreat!</p>
     </div>
+
+    <div id="friend-rate" style="display:none;">
+        <h2>Special Friends Rate</h2>
+        <p>Our friend rate is <strong>$700 per week</strong>. This includes a $350 cleaning fee, a $200–$300 rental agency fee depending on seasonal pricing, and a $50–$150 contribution toward general maintenance and property upkeep. This helps cover fixed costs while still offering a deeply discounted stay for friends.</p>
+        <p>Booking steps are the same as above: email for availability and use Zelle, PayPal, or mail a check to confirm.</p>
+        <p><strong>Email:</strong> <a href="mailto:szarman21@gmail.com">szarman21@gmail.com</a><br>
+        <strong>Phone:</strong> <a href="tel:+17275152382">(727) 515-2382</a></p>
+    </div>
 </section>
+
 <footer>
     <p>&copy; 2025 Heavenly Hideaway</p>
 </footer>
