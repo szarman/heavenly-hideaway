@@ -9,10 +9,9 @@
 </head>
 <body>
 <header>
-<h1>Heavenly Hideaway</h1>
+<h1 style="text-align: center;">Heavenly Hideaway</h1>
 <p>Secluded serenity, just minutes from adventure.</p>
 </header>
-
 <nav>
 <a href="index.html"><strong>Home</strong></a>
 <a href="the_cabin.html">The Cabin</a>
@@ -33,22 +32,37 @@
 <a href="house_rules.html">House Rules</a>
 <a href="gallery.html">Gallery</a>
 <div class="dropdown">
-    <span class="dropbtn">Log In</span>
-    <div class="dropdown-content">
-        <a href="friends.html">Friends</a>
-        <a href="owner.html">Owner</a>
-    </div>
+<span class="dropbtn">Log In</span>
+<div class="dropdown-content">
+<a href="friends.html">Friends</a>
+<a href="owner.html">Owner</a>
+</div>
 </div>
 <a href="contact.html">Contact</a>
 </nav>
-
 <section>
 <h2>Welcome to Heavenly Hideaway</h2>
-<img alt="Cabin exterior" class="responsive" src="images/cabin_main.jpg"/>
+<div style="text-align: center;"><img alt="Cabin exterior" class="responsive" src="images/cabin_main.jpg"/></div>
 <p>Relax with the whole family at Heavenly Hideaway, a 4-bedroom, 3.5-bath cabin set on 12 private acres at 3,200 feet elevation. Surrounded by peaceful creeks and nature, this cozy retreat offers a hot tub under the stars, a fire pit, and fresh mountain air. Escape the busy world and enjoy complete tranquility with easy access to hiking, rivers, and nearby towns.</p>
 </section>
 <footer>
-<p>© 2025 Heavenly Hideaway</p>
-</footer>
+<a class="weatherwidget-io" data-label_1="TODD" data-label_2="NC" data-theme="blue-mountains" href="https://forecast7.com/en/36d31n81d60/todd/?unit=us">TODD NC</a>
+<br/><small>© 2025 Heavenly Hideaway</small></footer>
+<div style="margin-top: 40px; text-align: center;">
+
+</div>
+
+
+<script>
+!function(d,s,id){
+  var js,fjs=d.getElementsByTagName(s)[0];
+  if(!d.getElementById(id)){
+    js=d.createElement(s);
+    js.id=id;
+    js.src='https://weatherwidget.io/js/widget.min.js';
+    fjs.parentNode.insertBefore(js,fjs);
+  }
+}(document,'script','weatherwidget-io-js');
+</script>
 </body>
 </html>
