@@ -61,12 +61,12 @@
     <a href="contact.html">Contact</a>
 </nav>
 <section>
-    <div id="login-form">
+    <form id="login-form" onsubmit="checkPassword(); return false;">
         <p>Enter password to access this page:</p>
         <input type="password" id="password" />
-        <button onclick="checkPassword()">Submit</button>
+        <button type="submit">Submit</button>
         <p id="error-message" style="color: red;"></p>
-    </div>
+    </form>
     <div id="protected-content" style="display:none;">
         <h2>Special Friends & Family Rate</h2>
         <p>Our friends and family rate is <strong>$450 per week</strong>. This covers the $350 professional cleaning and trash removal fee, plus a rental agency fee representing what they would normally earn on a full-price week.</p>
@@ -89,7 +89,18 @@
     <div id="friend-rate" style="display:none;">
         <h2>Special Friends Rate</h2>
         <p>Our friend rate is <strong>$700 per week</strong>. This includes a $350 cleaning fee, a $200–$300 rental agency fee depending on seasonal pricing, and a $50–$150 contribution toward general maintenance and property upkeep. This helps cover fixed costs while still offering a deeply discounted stay for friends.</p>
-        <p>Booking steps are the same as above: email for availability and use Zelle, PayPal, or mail a check to confirm.</p>
+        <p><h3>How to Book</h3>
+<ol>
+    <li>Email <a href="mailto:szarman21@gmail.com">szarman21@gmail.com</a> with the dates you’re requesting.</li>
+    <li>Wait for a confirmation email from me with availability.</li>
+    <li>Once confirmed, you may send payment by one of the following methods:
+        <ul>
+            <li>Zelle to szarman21@gmail.com</li>
+            <li>PayPal to szarman21@gmail.com</li>
+            <li>Mail a check payable to: <br><strong>Mike Szarowicz</strong><br>18026 Spencer Rd.<br>Odessa, FL 33556</li>
+        </ul>
+    </li>
+</ol></p>
         <p><strong>Email:</strong> <a href="mailto:szarman21@gmail.com">szarman21@gmail.com</a><br>
         <strong>Phone:</strong> <a href="tel:+17275152382">(727) 515-2382</a></p>
     </div>
