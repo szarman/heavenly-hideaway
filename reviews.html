@@ -6,6 +6,23 @@
 <meta charset="utf-8"/>
 <title>Reviews | Heavenly Hideaway</title>
 <link href="style.css" rel="stylesheet"/>
+
+<style>
+.review-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  font-size: 18px;
+  color: white;
+  background-color: #0077cc;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.review-button:hover {
+  background-color: #005fa3;
+}
+</style>
 </head>
 <body>
 <header>
@@ -16,7 +33,6 @@
 <a href="the_cabin.html">The Cabin</a>
 <a href="availability.html">Availability</a>
 <a href="reviews.html">Reviews</a>
-
 <div class="dropdown">
 <span class="dropbtn">Things to Do</span>
 <div class="dropdown-content">
@@ -32,28 +48,24 @@
 <a href="house_rules.html">House Rules</a>
 <a href="gallery.html">Gallery</a>
 <div class="dropdown">
-    <span class="dropbtn">Log In</span>
-    <div class="dropdown-content">
-        <a href="friends.html">Friends</a>
-        <a href="owner.html">Owner</a>
-    </div>
+<span class="dropbtn">Log In</span>
+<div class="dropdown-content">
+<a href="friends.html">Friends</a>
+<a href="owner.html">Owner</a>
+</div>
 </div>
 <a href="contact.html">Contact</a>
-    <a href="https://www.airbnb.com/rooms/1409413532693959161?guests=1&adults=1&s=67&unique_share_id=1783e1eb-dbe7-484f-b6b4-58b3d0ee095f" 
-       class="book-now-nav" target="_blank">Book Now!</a>
+<a class="book-now-nav" href="https://www.airbnb.com/rooms/1409413532693959161?guests=1&amp;adults=1&amp;s=67&amp;unique_share_id=1783e1eb-dbe7-484f-b6b4-58b3d0ee095f" target="_blank">Book Now!</a>
 </nav>
+
 <section>
-<h2>What Our Guests Say</h2>
-<blockquote>"Absolutely magical! The peaceful creeks, the cozy cabin, and that hot tub under the stars — just wow. We’ll be back every fall!"<footer>— Emily R.</footer></blockquote>
-<h3>Submit Your Review</h3>
-<form action="#" method="post">
-<label for="name">Name:</label><br/>
-<input id="name" name="name" type="text"/><br/><br/>
-<label for="review">Review:</label><br/>
-<textarea cols="50" id="review" name="review" rows="4"></textarea><br/><br/>
-<input type="submit" value="Submit Review"/>
-</form>
+<h2>What Guests Are Saying</h2>
+<p style="text-align: center;">
+<a class="review-button" href="https://maps.app.goo.gl/Q1SbAnCRZc38TU4V6" target="_blank">🌟 Read Google Reviews</a>
+<a class="review-button" href="https://www.airbnb.com/rooms/1409413532693959161/reviews" target="_blank">🏡 Read Airbnb Reviews</a>
+</p>
 </section>
+
 <footer>
 <p>© 2025 Heavenly Hideaway</p>
 </footer>
