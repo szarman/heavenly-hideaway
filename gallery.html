@@ -1,20 +1,87 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XF63CJ7GW2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XF63CJ7GW2');
-</script>
 <meta charset="utf-8"/>
 <title>Gallery | Heavenly Hideaway</title>
 <link href="style.css" rel="stylesheet"/>
+<style>
+/* --- Gallery Grid --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  background: #f7f7f7;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: background 0.15s ease;
+}
+.gallery-item:hover::after {
+  background: rgba(0,0,0,0.06);
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+.lightbox.open { display: flex; }
+.lightbox-img {
+  max-width: min(92vw, 1400px);
+  max-height: 86vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+}
+</style>
 </head>
 <body>
 <header>
@@ -25,7 +92,6 @@
 <a href="the_cabin.html">The Cabin</a>
 <a href="availability.html">Availability</a>
 <a href="reviews.html">Reviews</a>
-
 <div class="dropdown">
 <span class="dropbtn">Things to Do</span>
 <div class="dropdown-content">
@@ -34,18 +100,18 @@
 <a href="biking.html">Biking Routes</a>
 <a href="hiking.html">Hiking Trails</a>
 <a href="restaurants.html">Restaurants</a>
-<a href="festivals.html">Festivals &amp; Events</a>
+<a href="festivals.html">Festivals & Events</a>
 </div>
 </div>
 <a href="faq.html">FAQ</a>
 <a href="house_rules.html">House Rules</a>
 <a href="gallery.html">Gallery</a>
 <div class="dropdown">
-    <span class="dropbtn">Log In</span>
-    <div class="dropdown-content">
-        <a href="friends.html">Friends</a>
-        <a href="owner.html">Owner</a>
-    </div>
+<span class="dropbtn">Log In</span>
+<div class="dropdown-content">
+<a href="friends.html">Friends</a>
+<a href="owner.html">Owner</a>
+</div>
 </div>
 <a href="contact.html">Contact</a>
 <a href="book_now.html">Book NOW!</a>
@@ -53,20 +119,77 @@
 <section>
 <h2>Photo Gallery</h2>
 <div class="gallery-grid" id="gallery"></div>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+<button class="lightbox-close" id="lbClose" aria-label="Close">Close</button>
+<button class="lightbox-btn lightbox-prev" id="lbPrev" aria-label="Previous">‹</button>
+<img class="lightbox-img" id="lbImg" alt="Heavenly Hideaway large photo" />
+<button class="lightbox-btn lightbox-next" id="lbNext" aria-label="Next">›</button>
+</div>
 <script>
-        const images = [
-            "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "8.jpg", "9.jpg",
-            "10.jpg", "11.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg","19.jpg", "20.jpg", "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg", "29.jpg", "30.jpg", "31.jpg", "32.jpg", "33.jpg",
-            "1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png"
-        ];
-        const galleryDiv = document.getElementById("gallery");
-        images.forEach(file => {
-            const img = document.createElement("img");
-            img.src = `images/${file}`;
-            img.alt = "Heavenly Hideaway Photo";
-            galleryDiv.appendChild(img);
-        });
-        </script>
+const images = [
+"1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","8.jpg","9.jpg",
+"10.jpg","11.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg","23.jpg","24.jpg","25.jpg","26.jpg","27.jpg","28.jpg","29.jpg","30.jpg","31.jpg","32.jpg","33.jpg",
+"1.png","3.png","4.png","5.png","6.png","7.png","9.png","11.png"
+];
+const galleryDiv = document.getElementById("gallery");
+images.forEach((file, idx) => {
+  const wrap = document.createElement("a");
+  wrap.href = `images/${file}`;
+  wrap.className = "gallery-item";
+  wrap.dataset.index = idx;
+  const img = document.createElement("img");
+  img.src = `images/${file}`;
+  img.alt = "Heavenly Hideaway Photo";
+  img.loading = "lazy";
+  img.decoding = "async";
+  wrap.appendChild(img);
+  galleryDiv.appendChild(wrap);
+});
+const lb = document.getElementById("lightbox");
+const lbImg = document.getElementById("lbImg");
+const lbPrev = document.getElementById("lbPrev");
+const lbNext = document.getElementById("lbNext");
+const lbClose = document.getElementById("lbClose");
+let current = 0;
+function openLightbox(i) {
+  current = i;
+  lbImg.src = `images/${images[current]}`;
+  lb.classList.add("open");
+  lb.setAttribute("aria-hidden", "false");
+}
+function closeLightbox() {
+  lb.classList.remove("open");
+  lb.setAttribute("aria-hidden", "true");
+  lbImg.src = "";
+}
+function next() {
+  current = (current + 1) % images.length;
+  lbImg.src = `images/${images[current]}`;
+}
+function prev() {
+  current = (current - 1 + images.length) % images.length;
+  lbImg.src = `images/${images[current]}`;
+}
+galleryDiv.addEventListener("click", (e) => {
+  const a = e.target.closest("a.gallery-item");
+  if (!a) return;
+  e.preventDefault();
+  openLightbox(parseInt(a.dataset.index, 10));
+});
+lbNext.addEventListener("click", next);
+lbPrev.addEventListener("click", prev);
+lbClose.addEventListener("click", closeLightbox);
+lb.addEventListener("click", (e) => {
+  if (e.target === lb) closeLightbox();
+});
+document.addEventListener("keydown", (e) => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowRight") next();
+  if (e.key === "ArrowLeft") prev();
+});
+</script>
 </section>
 <footer>
 <p>© 2025 Heavenly Hideaway</p>
