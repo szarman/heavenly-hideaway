@@ -67,9 +67,105 @@
 <a href="book_now.html">Book NOW!</a>
 </nav>
 <section>
-<h2 style="text-align: center;">Welcome to Heavenly Hideaway</h2>
-<div style="text-align: center;"><img alt="Cabin exterior" class="responsive" src="images/cabin_main.jpg"/></div>
-<p>Relax with the whole family at Heavenly Hideaway, a 4-bedroom, 3.5-bath cabin set on 12 private acres at 3,200 feet elevation. Surrounded by peaceful creeks and nature, this cozy retreat offers a hot tub under the stars, a fire pit, and fresh mountain air. Escape the busy world and enjoy complete tranquility with easy access to hiking, rivers, and nearby towns.</p>
+  <style>
+    .hero {
+      position: relative;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      min-height: 50vh;
+      padding: 3rem 1rem;
+      background: url('images/cabin_main.jpg') center/cover no-repeat;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .hero::after{
+      content: ""; position:absolute; inset:0; 
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+    }
+    .hero-inner{
+      position:relative; z-index:1; text-align:center; color:#fff; max-width: 980px;
+    }
+    .cta-row{
+      display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center;
+    }
+    .btn{
+      display:inline-block; padding:.8rem 1.1rem; border-radius:10px; font-weight:700; text-decoration:none;
+    }
+    .btn-primary{ background:#0077cc; color:#fff; }
+    .btn-primary:hover{ background:#005fa3; }
+    .btn-ghost{ background:rgba(255,255,255,.92); color:#0b2540; }
+    .btn-ghost:hover{ background:#fff; }
+    .quick-stats{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:.75rem;
+      margin: 1.25rem auto 0; max-width:980px;
+    }
+    .stat{
+      background: rgba(255,255,255,0.92);
+      border: 1px solid #e8eaee;
+      border-radius: 12px;
+      padding: .85rem 1rem;
+      text-align:center;
+      backdrop-filter: blur(2px);
+    }
+    .stat strong{ display:block; font-size:1.05rem; }
+    .features{
+      max-width: 1100px; margin: 2rem auto 0; display:grid; gap:1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    }
+    .card{
+      border:1px solid #e8eaee; border-radius:14px; padding:1rem 1.1rem; background:#fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .card h3{ margin:.25rem 0 .5rem; font-size:1.2rem; text-align:center; }
+    .card p{ margin:.25rem 0 0; line-height:1.5; }
+    .center { text-align:center; }
+  </style>
+
+  <!-- HERO with only buttons -->
+  <div class="hero" role="img" aria-label="Heavenly Hideaway cabin exterior with mountain backdrop">
+    <div class="hero-inner">
+      <div class="cta-row">
+    <a class="btn btn-primary" href="availability.html">Check Dates</a>
+    <a class="btn btn-primary" href="book_now.html">Book Now</a>
+    <a class="btn btn-ghost" href="gallery.html">View Photo Gallery</a>
+</div>
+    </div>
+  </div>
+
+  <!-- Title, subtitle, and stats below hero -->
+  <div style="max-width:980px;margin:1.5rem auto 0;text-align:center;">
+    <h2>Secluded Mountain Cabin Near Boone &amp; West Jefferson</h2>
+    <p style="font-size:1.15rem;opacity:.85;">4 bedrooms • 3.5 baths • Hot tub • Fire pit • 12 private acres at 3,200′</p>
+    <div class="quick-stats">
+      <div class="stat"><strong>Sleeps 8</strong> Plenty of room for families &amp; friends</div>
+      <div class="stat"><strong>Close to Fun</strong> ~15–25 min to Boone &amp; West Jefferson</div>
+      <div class="stat"><strong>Nature All Around</strong> Creeks, woods, and starry skies</div>
+    </div>
+  </div>
+
+  <!-- VALUE/DETAIL CARDS -->
+  <div class="features">
+    <div class="card">
+      <h3>Comfort &amp; Space</h3>
+      <p>Cozy living areas, fully equipped kitchen, and private bedrooms across three levels—ideal for multi‑generation trips.</p>
+    </div>
+    <div class="card">
+      <h3>Adventure Nearby</h3>
+      <p>Minutes to the New River, hiking, biking, golf, and charming towns. Winter guests: see our FAQ for <strong>4WD guidance</strong> and snow‑plow info.</p>
+    </div>
+    <div class="card">
+      <h3>Book Direct &amp; Save</h3>
+      <p>Avoid platform fees (often 10–25%) when you <a href="book_now.html">book directly with us</a>. A $300 refundable deposit, signed agreement, and photo ID confirm your reservation.</p>
+    </div>
+  </div>
+
+  <!-- SEO/ACCESSIBLE DESCRIPTION -->
+  <p class="center" style="max-width:980px; margin:1.5rem auto 0; line-height:1.6;">
+    Heavenly Hideaway is a private mountain cabin in Todd, North Carolina—quiet and tucked away, yet convenient to Boone and West Jefferson.
+    With <strong>4 bedrooms</strong>, <strong>3.5 baths</strong>, and <strong>12 wooded acres</strong>, it’s perfect for families, retreats, and long weekends.
+    Explore the Blue Ridge, then return to a clean, comfortable home base with Wi‑Fi and all the essentials.
+  </p>
 </section>
 <footer>
 <a class="weatherwidget-io" data-label_1="TODD" data-label_2="NC" data-theme="blue-mountains" href="https://forecast7.com/en/36d31n81d60/todd/?unit=us">TODD NC</a>
