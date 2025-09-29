@@ -15,6 +15,9 @@
 <meta charset="utf-8"/>
 <title>Availability | Heavenly Hideaway</title>
 <link href="style.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js"></script>
+<meta name="hh-worker-url" content="https://<YOUR-WORKER-NAME>.<YOUR-SUBDOMAIN>.workers.dev/">
 </head>
 <body>
 <header>
@@ -58,5 +61,65 @@
 <footer>
 <p>© 2025 Heavenly Hideaway</p>
 </footer>
+<div id="hh-calendar"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const el = document.getElementById('hh-calendar');
+    if (!el) return;
+
+    // Read workers.dev URL (or route) from meta tag
+    const meta = document.querySelector('meta[name="hh-worker-url"]');
+    const workerUrl = (meta && meta.content && meta.content.trim()) || '/api/airbnb-ics';
+    const encodedIcs = encodeURIComponent('https://www.airbnb.com/calendar/ical/1409413532693959161.ics?s=c1a709120161ee05cfbe995ffefef8fb');
+
+    const cal = new FullCalendar.Calendar(el, {
+      initialView: 'dayGridMonth',
+      height: 'auto',
+      events: async (info, success, failure) => {
+        async function tryFetch(url) {
+          const r = await fetch(url, { credentials: 'omit' });
+          if (!r.ok) throw new Error('HTTP ' + r.status + ' @ ' + url);
+          return r.json();
+        }
+        try {
+          // Prefer secret-based Worker (no query string)
+          let base = workerUrl.endsWith('/') ? workerUrl.slice(0, -1) : workerUrl;
+          try {
+            const data = await tryFetch(base);
+            success(data);
+            return;
+          } catch (e1) {
+            // Fallback: append ?url=encoded ICS
+            try {
+              const data = await tryFetch(base + '?url=' + encodedIcs);
+              success(data);
+              return;
+            } catch (e2) {
+              // Last resort: local route (if workerUrl was absolute and route exists later)
+              if (base.startsWith('http')) {
+                try {
+                  const data = await tryFetch('/api/airbnb-ics?url=' + encodedIcs);
+                  success(data);
+                  return;
+                } catch (e3) {
+                  console.error(e3);
+                  failure(e2);
+                }
+              } else {
+                failure(e2);
+              }
+            }
+          }
+        } catch (err) {
+          console.error(err);
+          failure(err);
+        }
+      },
+      eventDisplay: 'background' // Shade reserved ranges
+    });
+
+    cal.render();
+  });
+</script>
 </body>
 </html>
