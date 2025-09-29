@@ -56,18 +56,12 @@
 <section>
 <h2>Check Our Calendar</h2>
 <p>Below you can view up-to-date availability for Heavenly Hideaway.</p>
-<iframe frameborder="0" height="600" scrolling="no" src="https://calendar.google.com/calendar/embed?src=3chbs0bdvhnf48c87kbj6m4csir2rk7a%40import.calendar.google.com&amp;ctz=America%2FNew_York" style="border:0" width="800"></iframe>
-</section>
-<footer>
-<p>© 2025 Heavenly Hideaway</p>
-</footer>
 <div id="hh-calendar"></div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const el = document.getElementById('hh-calendar');
     if (!el) return;
 
-    // Read workers.dev URL (or route) from meta tag
     const meta = document.querySelector('meta[name="hh-worker-url"]');
     const workerUrl = (meta && meta.content && meta.content.trim()) || '/api/airbnb-ics';
     const encodedIcs = encodeURIComponent('https://www.airbnb.com/calendar/ical/1409413532693959161.ics?s=c1a709120161ee05cfbe995ffefef8fb');
@@ -82,20 +76,17 @@
           return r.json();
         }
         try {
-          // Prefer secret-based Worker (no query string)
           let base = workerUrl.endsWith('/') ? workerUrl.slice(0, -1) : workerUrl;
           try {
             const data = await tryFetch(base);
             success(data);
             return;
           } catch (e1) {
-            // Fallback: append ?url=encoded ICS
             try {
               const data = await tryFetch(base + '?url=' + encodedIcs);
               success(data);
               return;
             } catch (e2) {
-              // Last resort: local route (if workerUrl was absolute and route exists later)
               if (base.startsWith('http')) {
                 try {
                   const data = await tryFetch('/api/airbnb-ics?url=' + encodedIcs);
@@ -115,11 +106,16 @@
           failure(err);
         }
       },
-      eventDisplay: 'background' // Shade reserved ranges
+      eventDisplay: 'background'
     });
-
     cal.render();
   });
 </script>
+</section>
+<footer>
+<p>© 2025 Heavenly Hideaway</p>
+</footer>
+
+
 </body>
 </html>
