@@ -17,11 +17,82 @@
 <link href="style.css" rel="stylesheet"/>
 
 <style>
+.reviews-summary {
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+.reviews-summary .overall {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.reviews-summary .star {
+  color: #f5a623;
+}
+.reviews-summary .total {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+.rating-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 30px;
+  margin-top: 15px;
+}
+.rating-item {
+  font-size: 0.95em;
+}
+.rating-item strong {
+  display: block;
+  font-size: 1.2em;
+  color: #222;
+}
+.reviews-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+.review-card {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.review-stars {
+  color: #f5a623;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+.review-name {
+  font-weight: bold;
+  font-size: 1.15em;
+  margin-bottom: 2px;
+}
+.review-meta {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 12px;
+}
+.review-text {
+  font-size: 1em;
+  line-height: 1.55;
+  color: #333;
+}
 .review-button {
   display: inline-block;
   margin: 10px;
   padding: 12px 20px;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   background-color: #0077cc;
   text-decoration: none;
@@ -30,6 +101,10 @@
 }
 .review-button:hover {
   background-color: #005fa3;
+}
+.review-cta {
+  text-align: center;
+  margin: 30px auto 40px;
 }
 </style>
 </head>
@@ -70,21 +145,77 @@
 <section>
 <h2 style="text-align: center;">What Guests Are Saying</h2>
 
-<p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1em; line-height: 1.5;">
-Heavenly Hideaway has been a beloved vacation rental for over 10 years, welcoming guests from all over the country. 
-Recently, we transitioned to new management, which unfortunately meant starting fresh with our online review history. 
-While our past reviews are no longer visible, we remain committed to providing the same warm hospitality, 
-attention to detail, and memorable experiences that have brought guests back year after year.
-</p>
+<div class="reviews-summary">
+  <div class="overall"><span class="star">★</span> 5.0</div>
+  <div class="total">Based on 4 reviews on Airbnb</div>
+  <div class="rating-grid">
+    <div class="rating-item"><strong>4.8</strong>Cleanliness</div>
+    <div class="rating-item"><strong>5.0</strong>Accuracy</div>
+    <div class="rating-item"><strong>5.0</strong>Check-in</div>
+    <div class="rating-item"><strong>5.0</strong>Communication</div>
+    <div class="rating-item"><strong>5.0</strong>Location</div>
+    <div class="rating-item"><strong>5.0</strong>Value</div>
+  </div>
+</div>
 
-<p style="text-align: center;">
-<a class="review-button" href="https://maps.app.goo.gl/Q1SbAnCRZc38TU4V6" target="_blank">🌟 Read Google Reviews</a>
-<a class="review-button" href="https://www.airbnb.com/rooms/1409413532693959161/reviews" target="_blank">🏡 Read Airbnb Reviews</a>
-</p>
+<div class="reviews-container">
+
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-name">Dinita</div>
+    <div class="review-meta">New Bern, North Carolina &middot; February 2026 &middot; Group trip</div>
+    <div class="review-text">
+      The &ldquo;Heavenly Hideaway&rdquo; was named perfectly! We had a group trip of 4 couples and we all had our own comfy rooms.
+      This is a perfect cozy cabin experience and the property was gorgeous, private, and peaceful. We loved the hot tub and
+      spent every night under the stars watching for the ones that shot across the sky. Michael was very responsive and a nice host!
+      The property was a 40ish min drive into Boone and smaller town before that as well. We were using the Appalachian ski mountain
+      for the weekend which was a little far but still manageable. Would 10/10 recommend and will probably try to stay again!
+      Thank you Michael for providing a lovely home!
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-name">Brandon</div>
+    <div class="review-meta">October 2025 &middot; Stayed a few nights</div>
+    <div class="review-text">
+      An amazing cabin and host. Completely exceeded expectations. We had an amazing time. Michael is super responsive and
+      very accommodating. Our family will definitely go back to the Heavenly Hideaway.
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-name">Holly</div>
+    <div class="review-meta">Durham, North Carolina &middot; May 2026 &middot; Group trip</div>
+    <div class="review-text">
+      We had a great stay at the cabin. Very calming and peaceful while at the cabin, but could be in Boone within 20 mins
+      for shopping and restaurants. Beautiful scenery all around. Will absolutely stay again!
+    </div>
+  </div>
+
+  <div class="review-card">
+    <div class="review-stars">★★★★★</div>
+    <div class="review-name">Katy</div>
+    <div class="review-meta">Raleigh, North Carolina &middot; August 2025 &middot; Group trip</div>
+    <div class="review-text">
+      Beautiful place is always a good place to go.
+    </div>
+  </div>
+
+</div>
+
+<div class="review-cta">
+  <p style="font-size: 1.05em; max-width: 700px; margin: 0 auto 15px;">
+    See more reviews and verify directly on Airbnb and Google.
+  </p>
+  <a class="review-button" href="https://www.airbnb.com/rooms/1409413532693959161/reviews" target="_blank">Read All Airbnb Reviews</a>
+</div>
+
 </section>
 
 <footer>
-<p>© 2025 Heavenly Hideaway</p>
+<p>&copy; 2025 Heavenly Hideaway</p>
 </footer>
 </body>
 </html>
