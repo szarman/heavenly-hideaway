@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XF63CJ7GW2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XF63CJ7GW2');
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="nav.js" defer></script>
+    <title>Friends & Family | Heavenly Hideaway</title>
+    <link rel="stylesheet" href="style.css">
+    
+<script>
+    function checkPassword() {
+        const input = document.getElementById('password').value;
+        const familyContent = document.getElementById('protected-content');
+        const friendContent = document.getElementById('friend-rate');
+        const error = document.getElementById('error-message');
+        document.getElementById('login-form').style.display = 'none';
+
+        if (input === "hhfamilync") {
+            familyContent.style.display = 'block';
+            error.textContent = '';
+        } else if (input === "hhfriendnc") {
+            friendContent.style.display = 'block';
+            error.textContent = '';
+        } else {
+            document.getElementById('login-form').style.display = 'block';
+            error.textContent = 'Incorrect password. Please try again.';
+        }
+    }
+</script>
+
+</head>
+<body>
+<header>
+    <h1>Friends & Family Rate</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="the_cabin.html">The Cabin</a>
+    <a href="availability.html">Availability</a>
+    <a href="reviews.html">Reviews</a>
+    <div class="dropdown">
+    <span class="dropbtn">Things to Do</span>
+    <div class="dropdown-content">
+    <a href="water.html">Water Adventures</a>
+    <a href="golf.html">Golf Courses</a>
+    <a href="biking.html">Biking Routes</a>
+    <a href="hiking.html">Hiking Trails</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="festivals.html">Festivals &amp; Events</a>
+    </div>
+    </div>
+    <a href="faq.html">FAQ</a>
+    <a href="house_rules.html">House Rules</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="book_now.html">Book NOW!</a>
+</nav>
+<section>
+    <form id="login-form" onsubmit="checkPassword(); return false;">
+        <p>Enter password to access this page:</p>
+        <input type="password" id="password" />
+        <button type="submit">Submit</button>
+        <p id="error-message" style="color: red;"></p>
+    </form>
+    <div id="protected-content" style="display:none;">
+        <h2>Special Friends & Family Rate</h2>
+        <p>Our friends and family rate is <strong>$450 per week</strong>. This covers the $350 professional cleaning and trash removal fee, plus a rental agency fee representing what they would normally earn on a full-price week.</p>
+        <h3>How to Book</h3>
+        <ol>
+            <li>Email <a href="mailto:szarman21@gmail.com">szarman21@gmail.com</a> with the dates you’re requesting.</li>
+            <li>Wait for a confirmation email from me with availability.</li>
+            <li>Once confirmed, you may send payment by one of the following methods:
+                <ul>
+                    <li>Zelle to szarman21@gmail.com</li>
+                    <li>PayPal to szarman21@gmail.com</li>
+                    <li>Mail a check payable to: <br><strong>Mike Szarowicz</strong><br>18026 Spencer Rd.<br>Odessa, FL 33556</li>
+                </ul>
+            </li>
+        </ol>
+        <p><strong>Phone:</strong> <a href="tel:+17275152382">(727) 515-2382</a></p>
+        <p>Thank you for supporting our mountain retreat!</p>
+    </div>
+
+    <div id="friend-rate" style="display:none;">
+        <h2>Special Friends Rate</h2>
+        <p>Our friend rate is <strong>$700 per week</strong>. This includes a $350 cleaning fee, a $200–$300 rental agency fee depending on seasonal pricing, and a $50–$150 contribution toward general maintenance and property upkeep. This helps cover fixed costs while still offering a deeply discounted stay for friends.</p>
+        <p><h3>How to Book</h3>
+<ol>
+    <li>Email <a href="mailto:szarman21@gmail.com">szarman21@gmail.com</a> with the dates you’re requesting.</li>
+    <li>Wait for a confirmation email from me with availability.</li>
+    <li>Once confirmed, you may send payment by one of the following methods:
+        <ul>
+            <li>Zelle to szarman21@gmail.com</li>
+            <li>PayPal to szarman21@gmail.com</li>
+            <li>Mail a check payable to: <br><strong>Mike Szarowicz</strong><br>18026 Spencer Rd.<br>Odessa, FL 33556</li>
+        </ul>
+    </li>
+</ol></p>
+        <p><strong>Email:</strong> <a href="mailto:szarman21@gmail.com">szarman21@gmail.com</a><br>
+        <strong>Phone:</strong> <a href="tel:+17275152382">(727) 515-2382</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Heavenly Hideaway</p>
+</footer>
+</body>
+</html>
