@@ -21,8 +21,8 @@
   .page * { box-sizing: border-box; }
   .top { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; margin-bottom: 14px; }
   .rule { min-width: 260px; }
-  .top img { width: 360px; max-width: 100%; align-self: center; height: auto; border: 1px solid #c9d3da; border-radius: 6px; }
-  .rule { flex: 1; background: #fff4e0; border: 2px solid #e08a00; border-radius: 8px; padding: 8px 11px; }
+  .top img { width: 520px; max-width: 100%; align-self: center; height: auto; border: 1px solid #c9d3da; border-radius: 6px; }
+  .rule { flex: 1; align-self: center; background: #fff4e0; border: 2px solid #e08a00; border-radius: 8px; padding: 8px 11px; }
   .rule h2 { margin: 0 0 6px; font-size: 1.25rem; color: #a35f00; }
   .rule p { margin: 0 0 6px; }
   .rule .big { font-size: 1.1rem; font-weight: 700; }
@@ -87,10 +87,8 @@
   <img src="images/hot_tub_panel.png" alt="Control panel diagram: JETS, AUX, LIGHT on the left; WARM, MODE, COOL on the right; temperature display in the center">
   <div class="rule">
     <h2>The one rule</h2>
-    <p class="big">To change the temperature, use ONLY the <span class="kbd">WARM ▲</span> and <span class="kbd">COOL ▼</span> arrows.</p>
-    
-    <p>Do not press any other button before or after setting it. <span class="kbd">JETS</span> or <span class="kbd">LIGHT</span> right after an arrow opens the filter menu. <span class="kbd">MODE</span> after an arrow changes the heating mode (green box).</p>
-    <p>When you press an arrow, the <b>set point</b> temperature <b>flashes</b>. Keep pressing while it flashes to change it. After 5 seconds the display goes back to <b>solid</b>, showing the <b>current water temperature</b>. That is normal. Your setting is saved.</p>
+    <p class="big">Use only <span class="kbd">WARM ▲</span> and <span class="kbd">COOL ▼</span> to set the temperature.</p>
+    <p>While the display is <b>flashing</b>, press nothing else. Wait for it to stop flashing and show the water temperature again. The only exception is switching modes (green box below).</p>
   </div>
 </div>
 
@@ -108,11 +106,11 @@
 
 <section class="mode">
   <h2>Not heating? Check the mode <span class="btn">WARM ▲</span> or <span class="btn">COOL ▼</span> then <span class="btn">MODE</span></h2>
-  <p style="margin:0 0 4px"><b>How to tell:</b> in Standard mode the display shows only the temperature. If it alternates between the temperature and <b>Ecn</b> (Economy) or <b>SLP</b> (Sleep), the tub is only heating during filter cycles and the water will stay cool.</p>
+  <p style="margin:0 0 4px"><b>How to tell:</b> in Standard mode the display shows only the temperature. If it alternates between the temperature and <b>Ecn</b> or <b>SLP</b>, the tub only heats during filter cycles and the water will stay cool.</p>
   <ol>
     <li>Press <span class="kbd">WARM</span> or <span class="kbd">COOL</span> once. The display starts flashing.</li>
     <li>While it is flashing, press <span class="kbd">MODE</span>. The mode advances one step: Standard → Economy → Sleep → Standard.</li>
-    <li>Repeat step 1 and 2 until <b>Std</b> appears on the display for a moment. The tub is now in Standard mode and will heat to the set temperature.</li>
+    <li>Repeat steps 1 and 2 until <b>Std</b> appears for a moment. The tub is now in Standard mode and will heat.</li>
   </ol>
 </section>
 
